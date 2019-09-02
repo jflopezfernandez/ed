@@ -3,13 +3,18 @@
 
 int main(int __attribute__((unused)) argc, const char __attribute__((unused)) *argv[])
 {
-    if (argc == 1) {
-        fprintf(stderr, "No input(s).\n");
-        exit(EXIT_FAILURE);
-    }
+    static const char* prompt = " > ";
 
-    while (*++argv) {
-        printf("%s\n", *argv);
+    char* input_buffer = NULL;
+
+    while ((input_buffer = readline(prompt))) {
+        if (strcmp(input_buffer, "quit") == 0) {
+            break;
+        }
+
+        printf("%s\n", input_buffer);
+
+        free(input_buffer);
     }
 
     return EXIT_SUCCESS;
