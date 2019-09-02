@@ -10,7 +10,7 @@ OBJS     = $(patsubst %.c,%.o,$(notdir $(wildcard src/*.c)))
 CC       = gcc
 CFLAGS   = -std=c17 -Wall -Wextra -Wpedantic -O3 -mtune=intel -march=skylake
 CPPFLAGS = -D_GNU_SOURCE -D_XOPEN_SOURCE=700
-LDFLAGS  = -lm
+LDFLAGS  = -lreadline -lhistory
 
 TARGET   = ed
 

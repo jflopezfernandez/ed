@@ -18,6 +18,9 @@
 #include <limits.h>
 #include <inttypes.h>
 
+#include <readline/readline.h>
+#include <readline/history.h>
+
 #if !defined(FALSE) || !defined(TRUE)
 enum { FALSE = 0, TRUE = !FALSE };
 #endif // FALSE || TRUE
